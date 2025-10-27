@@ -28,7 +28,7 @@ Network-Automation-with-Ansible/
 ├── docs/
 │   └── security_policies.md
 └── README.md
-
+```
 
 ---
 
@@ -41,12 +41,15 @@ Network-Automation-with-Ansible/
 ---
 
 ## 🚀 How to Run
+1. Install Ansible
 ```bash
-# 1. Install Ansible
 sudo apt install ansible -y
-
-# 2. Navigate to the project directory
-cd ansible/playbooks
-
-# 3. Run a sample playbook
+```
+2. Navigate to the project directory
+```bash
+cd Network-Automation-with-Ansible/ansible/playbooks
+```
+3. Run a sample playbook
+```bash
 ansible-playbook network_setup.yml -i inventory.ini
+```
