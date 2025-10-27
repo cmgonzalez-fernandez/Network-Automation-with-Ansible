@@ -15,19 +15,20 @@ The repository includes:
 
 ---
 
-## 🗂 Folder Structure
-
+## 📂 Folder Structure
+```bash
 Network-Automation-with-Ansible/
 ├── ansible/
-│ ├── playbooks/
-│ │ ├── firewall_config.yml
-│ │ ├── ssh_key_rotation.yml
-│ │ └── network_setup.yml
-│ └── roles/
-│ └── common_tasks/
+│   ├── playbooks/
+│   │   ├── firewall_config.yml
+│   │   ├── ssh_key_rotation.yml
+│   │   └── network_setup.yml
+│   └── roles/
+│       └── common_tasks/
 ├── docs/
-│ └── security_policies.md
+│   └── security_policies.md
 └── README.md
+
 
 ---
 
@@ -49,11 +50,3 @@ cd ansible/playbooks
 
 # 3. Run a sample playbook
 ansible-playbook network_setup.yml -i inventory.ini
----
-🧠 Learning Goals
-
-Practice infrastructure as code with Ansible.
-
-Learn modular role design and YAML structure.
-
-Automate repetitive network configuration tasks.
