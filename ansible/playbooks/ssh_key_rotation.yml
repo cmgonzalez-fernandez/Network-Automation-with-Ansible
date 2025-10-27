@@ -1,7 +1,23 @@
 ---
-- name: Demo SSH Key Rotation
-  hosts: localhost
+- name: Rotate SSH Keys
+  hosts: all
+  become: yes
   tasks:
-    - name: Rotate SSH keys (simulated)
-      ansible.builtin.debug:
-        msg: "SSH keys rotated successfully"
+    - name: Generate new SSH key pair
+      ansible.builtin.openssh_keypair:
+        path: /home/{{ ansible_user }}/.ssh/id_rsa
+        type: rsa
+        size: 2048
+      register: keypair
+
+    - name: Set correct permissions
+      file:
+        path: /home/{{ ansible_user }}/.ssh/id_rsa
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: '0600'
+
+    - name: Add public key to authorized_keys
+      authorized_key:
+        user: "{{ ansible_user }}"
+        key: "{{ keypair.public_key }}"
