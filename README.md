@@ -16,6 +16,7 @@ The repository includes:
 ---
 
 ## 🗂 Folder Structure
+
 Network-Automation-with-Ansible/
 ├── ansible/
 │ ├── playbooks/
@@ -48,7 +49,7 @@ cd ansible/playbooks
 
 # 3. Run a sample playbook
 ansible-playbook network_setup.yml -i inventory.ini
-
+---
 🧠 Learning Goals
 
 Practice infrastructure as code with Ansible.
