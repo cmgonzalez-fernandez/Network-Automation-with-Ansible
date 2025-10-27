@@ -1,0 +1,7 @@
+---
+- name: Demo Firewall Configuration
+  hosts: localhost
+  tasks:
+    - name: Simulate firewall rules
+      ansible.builtin.debug:
+        msg: "Firewall rule applied: Allow SSH, Block All Others"

@@ -1,0 +1,7 @@
+---
+- name: Demo Network Setup
+  hosts: localhost
+  tasks:
+    - name: Setup network (simulated)
+      ansible.builtin.debug:
+        msg: "Network configured successfully"

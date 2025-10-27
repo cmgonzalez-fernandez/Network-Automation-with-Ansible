@@ -1,0 +1,7 @@
+---
+- name: Demo SSH Key Rotation
+  hosts: localhost
+  tasks:
+    - name: Rotate SSH keys (simulated)
+      ansible.builtin.debug:
+        msg: "SSH keys rotated successfully"
