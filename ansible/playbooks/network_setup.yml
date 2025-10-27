@@ -1,7 +1,17 @@
 ---
-- name: Demo Network Setup
-  hosts: localhost
+- name: Basic Network Setup
+  hosts: all
+  become: yes
   tasks:
-    - name: Setup network (simulated)
-      ansible.builtin.debug:
-        msg: "Network configured successfully"
+    - name: Configure hostname
+      hostname:
+        name: "{{ inventory_hostname }}"
+
+    - name: Ensure network interface is up
+      ansible.builtin.command: ip link set {{ ansible_default_ipv4.interface }} up
+
+    - name: Assign static IP (example)
+      ansible.builtin.lineinfile:
+        path: /etc/network/interfaces
+        regexp: '^address'
+        line: "address 192.168.1.{{ inventory_hostname[-1] }}/24"
