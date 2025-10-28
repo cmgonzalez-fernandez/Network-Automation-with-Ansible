@@ -19,12 +19,10 @@ The repository includes:
 ```bash
 Network-Automation-with-Ansible/
 ├── ansible/
-│   ├── playbooks/
-│   │   ├── firewall_config.yml
-│   │   ├── ssh_key_rotation.yml
-│   │   └── network_setup.yml
-│   └── roles/
-│       └── common_tasks/
+│   └── playbooks/
+│       ├── firewall_config.yml
+│       ├── ssh_key_rotation.yml
+│       └── network_setup.yml       
 ├── docs/
 │   └── security_policies.md
 └── README.md
